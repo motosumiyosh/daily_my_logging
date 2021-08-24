@@ -1,0 +1,15 @@
+name: GitHub Actions
+on: 
+  schedule: 
+    - cron: "10 0 * * *"
+jobs:
+  daily_spotify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute daily spotify log
+        run: ruby export_recently_played.rb
+  daily_tweet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute daily tweets
+        run: ruby daily_tweets_csv_export.rb
