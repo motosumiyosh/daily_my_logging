@@ -1,14 +1,17 @@
-name: GitHub Actions
+name: regular export actions
+
 on: 
   schedule: 
     - cron: "10 0 * * *"
+
 jobs:
-  daily_spotify:
+  daily_spotify_playings:
     runs-on: ubuntu-latest
     steps:
       - name: execute daily spotify log
         run: ruby export_recently_played.rb
-  daily_tweet:
+
+  daily_tweets:
     runs-on: ubuntu-latest
     steps:
       - name: execute daily tweets

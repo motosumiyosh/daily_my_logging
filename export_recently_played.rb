@@ -60,8 +60,8 @@ def access_token
   params = {
     refresh_token: refresh_token,
     grant_type: "refresh_token",
-    client_id: "e6a55d9a94674681af0c715dbc927f52",
-    client_secret: "1700116e8fed47b8aa516a314784a25a"
+    client_id: ENV["SPOTIFY_API_CLIENT_ID"],
+    client_secret: ENV["SPOTIFY_API_CLIENT_SECRET"],
   }
   uri = URI.parse("https://accounts.spotify.com/api/token")
   response = Net::HTTP.post_form(uri, params)
@@ -69,7 +69,7 @@ def access_token
 end
 
 def refresh_token
-  "AQDv0QnphXyn_vKHHHZqBHyey5IsCD5LkgB-qZ-L_UzziH1B72Ibi6ZerrsLpwkpVfT-ZRsyeoWQmYCa2CW3Ot50ghDfXGdmIsF0sbclYS7J9ZkzR-T6m5mvJBOaHindfc0"
+  ENV["SPOTIFY_API_REFRESH_TOKEN"]
 end
 
 def csv_values(item)
