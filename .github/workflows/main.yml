@@ -7,12 +7,16 @@ on:
 
 jobs:
   daily_spotify_playings:
-    name: Daily Spotigy Plaings
+    name: Daily Spotify Plaings
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
       - name: execute daily spotify log
+        env:
+          SPOTIFY_API_CLIENT_ID: ${{ secrets.SPOTIFY_API_CLIENT_ID }}
+          SPOTIFY_API_CLIENT_SECRET: ${{ secrets.SPOTIFY_API_CLIENT_SECRET }}
+          SPOTIFY_API_REFRESH_TOKEN: ${{ secrets.SPOTIFY_API_REFRESH_TOKEN }}
         run: ruby export_recently_played.rb
 
   daily_tweets:
