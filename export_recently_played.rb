@@ -2,7 +2,6 @@ require "csv"
 require "net/http"
 require "json"
 require "time"
-require "pry"
 
 def execute
   before = ""
