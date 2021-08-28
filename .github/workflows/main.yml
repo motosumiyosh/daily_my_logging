@@ -2,7 +2,7 @@ name: regular export actions
 
 on: 
   schedule: 
-    - cron: "11 53 * * *"
+    - cron: "57 11  * * *"
 
 jobs:
   daily_spotify_playings:
