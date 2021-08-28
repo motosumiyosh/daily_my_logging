@@ -3,7 +3,7 @@ name: regular export actions
 on: 
   schedule: 
     - cron: "10 12 * * *"
-
+  workflow_dispatch:
 jobs:
   daily_spotify_playings:
     runs-on: ubuntu-latest
