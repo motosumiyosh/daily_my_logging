@@ -2,17 +2,18 @@ name: regular export actions
 
 on: 
   schedule: 
-    - cron: "10 12 * * *"
+    - cron: "0 22 * * *"
   workflow_dispatch:
+
 jobs:
   daily_spotify_playings:
     runs-on: ubuntu-latest
     steps:
       - name: execute daily spotify log
-        run: ruby ../../export_recently_played.rb
+        run: ruby ./export_recently_played.rb
 
   daily_tweets:
     runs-on: ubuntu-latest
     steps:
       - name: execute daily tweets
-        run: ruby ../../daily_tweets_csv_export.rb
+        run: ruby ./daily_tweets_csv_export.rb
