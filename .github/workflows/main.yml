@@ -10,14 +10,16 @@ jobs:
     name: Daily Spotigy Plaings
     runs-on: ubuntu-latest
     steps:
-      - name: execute daily spotify log
+      - name: checkout repo
         uses: actions/checkout@v2
+      - name: execute daily spotify log
         run: ruby export_recently_played.rb
 
   daily_tweets:
     name: Daily Tweets
     runs-on: ubuntu-latest
     steps:
-      - name: execute daily tweets
+      - name: checkout repo
         uses: actions/checkout@v2
+      - name: execute daily tweets
         run: ruby daily_tweets_csv_export.rb
