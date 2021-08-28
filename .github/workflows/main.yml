@@ -13,11 +13,11 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v2
       - name: execute daily spotify log
+        run: ruby export_recently_played.rb
         env:
           SPOTIFY_API_CLIENT_ID: ${{ secrets.SPOTIFY_API_CLIENT_ID }}
           SPOTIFY_API_CLIENT_SECRET: ${{ secrets.SPOTIFY_API_CLIENT_SECRET }}
           SPOTIFY_API_REFRESH_TOKEN: ${{ secrets.SPOTIFY_API_REFRESH_TOKEN }}
-        run: ruby export_recently_played.rb
 
   daily_tweets:
     name: Daily Tweets
