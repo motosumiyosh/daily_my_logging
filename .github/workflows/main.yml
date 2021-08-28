@@ -7,13 +7,17 @@ on:
 
 jobs:
   daily_spotify_playings:
+    name: Daily Spotigy Plaings
     runs-on: ubuntu-latest
     steps:
       - name: execute daily spotify log
-        run: ls
+        uses: actions/checkout@v2
+        run: ruby export_recently_played.rb
 
   daily_tweets:
+    name: Daily Tweets
     runs-on: ubuntu-latest
     steps:
       - name: execute daily tweets
+        uses: actions/checkout@v2
         run: ruby daily_tweets_csv_export.rb
