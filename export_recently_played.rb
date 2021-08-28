@@ -56,6 +56,8 @@ def export_csv(items)
 end
 
 def access_token
+  puts ENV["SPOTIFY_API_CLIENT_ID"]
+
   params = {
     refresh_token: refresh_token,
     grant_type: "refresh_token",

@@ -19,11 +19,11 @@ jobs:
           SPOTIFY_API_CLIENT_SECRET: ${{ secrets.SPOTIFY_API_CLIENT_SECRET }}
           SPOTIFY_API_REFRESH_TOKEN: ${{ secrets.SPOTIFY_API_REFRESH_TOKEN }}
 
-  daily_tweets:
-    name: Daily Tweets
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repo
-        uses: actions/checkout@v2
-      - name: execute daily tweets
-        run: ruby daily_tweets_csv_export.rb
+  # daily_tweets:
+  #   name: Daily Tweets
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: checkout repo
+  #       uses: actions/checkout@v2
+  #     - name: execute daily tweets
+  #       run: ruby daily_tweets_csv_export.rb
